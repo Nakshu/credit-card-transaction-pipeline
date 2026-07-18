@@ -1,0 +1,16 @@
+# Copy this to ~/.dbt/profiles.yml and fill in your own Snowflake trial credentials.
+# Do NOT commit a real profiles.yml with credentials to GitHub.
+
+credit_card_pipeline:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: "{{ env_var('SNOWFLAKE_ACCOUNT') }}"
+      user: "{{ env_var('SNOWFLAKE_USER') }}"
+      password: "{{ env_var('SNOWFLAKE_PASSWORD') }}"
+      role: SYSADMIN
+      database: "{{ env_var('SNOWFLAKE_DATABASE', 'CREDIT_CARD_PIPELINE') }}"
+      warehouse: "{{ env_var('SNOWFLAKE_WAREHOUSE') }}"
+      schema: ANALYTICS
+      threads: 4

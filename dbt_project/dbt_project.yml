@@ -1,0 +1,15 @@
+name: 'credit_card_pipeline'
+version: '1.0.0'
+config-version: 2
+
+profile: 'credit_card_pipeline'
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+
+models:
+  credit_card_pipeline:
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table

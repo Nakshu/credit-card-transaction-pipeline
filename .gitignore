@@ -1,0 +1,30 @@
+# Data
+data/raw/
+data/processed/
+
+# GE results
+src/quality/results/
+gx/
+.great_expectations/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# dbt
+dbt_project/target/
+dbt_project/dbt_packages/
+dbt_project/logs/
+
+# Airflow
+airflow/logs/
+airflow/airflow.db
+
+# Credentials -- never commit real profiles.yml or .env
+.env
+profiles.yml
+
+# OS
+.DS_Store

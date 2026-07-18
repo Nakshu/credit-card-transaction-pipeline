@@ -1,0 +1,32 @@
+version: 2
+
+sources:
+  - name: raw
+    database: "{{ env_var('SNOWFLAKE_DATABASE', 'CREDIT_CARD_PIPELINE') }}"
+    schema: RAW
+    tables:
+      - name: raw_transactions
+
+models:
+  - name: stg_transactions
+    description: Cleaned and renamed transaction records, one row per transaction.
+    columns:
+      - name: transaction_id
+        description: Unique identifier for a transaction.
+        tests:
+          - unique
+          - not_null
+      - name: card_id
+        description: Unique identifier for the card used.
+        tests:
+          - not_null
+      - name: transaction_amount
+        description: Transaction amount in USD.
+        tests:
+          - not_null
+      - name: merchant_category
+        tests:
+          - accepted_values:
+              values: ['grocery', 'electronics', 'travel', 'restaurant',
+                        'gas_station', 'online_retail', 'utilities',
+                        'entertainment', 'pharmacy', 'jewelry']

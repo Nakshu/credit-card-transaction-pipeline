@@ -1,0 +1,8 @@
+faker==24.4.0
+pyspark==3.5.1
+pandas==2.2.1
+great_expectations
+pyarrow
+snowflake-connector-python==3.7.1
+dbt-snowflake==1.7.1
+apache-airflow==2.8.3
