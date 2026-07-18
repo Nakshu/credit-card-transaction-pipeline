@@ -121,7 +121,7 @@ cd dbt_project && dbt run && dbt test
 
 ## 7. Why This Project
 
-Built to demonstrate the parts of the analytics-engineering stack I hadn't yet shown in
+Built to demonstrate the parts of the analytics engineering stack I hadn't yet shown in
 production work: distributed transformation with **PySpark** and a formalized, named
-**data quality framework** (Great Expectations), on top of skills I already use daily —
+**data quality framework** (Great Expectations), on top of skills I already use daily - 
 SQL, Snowflake, dbt, and Tableau.
